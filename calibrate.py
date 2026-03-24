@@ -36,7 +36,7 @@ def remove_outliers(readings: list) -> list:
     """
     avg     = sum(readings) / len(readings)
     std     = statistics.stdev(readings)
-    cleaned = [r for r in readings if abs(r - avg) < 1 * std]
+    cleaned = [r for r in readings if abs(r - avg) < 2 * std]
     removed = len(readings) - len(cleaned)
     if removed > 0:
         print(f"  Removed {removed} outliers from {len(readings)} readings")
